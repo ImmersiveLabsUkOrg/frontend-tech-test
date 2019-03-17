@@ -4,7 +4,7 @@
 
 To create a small react application that fetches public information about a user from the GitHub API.
 
-[Original Instructions]()
+[Original Instructions](https://github.com/stonefarmer9/frontend-tech-test/blob/master/Instructions.md)
 
 ## Getting Started
 
