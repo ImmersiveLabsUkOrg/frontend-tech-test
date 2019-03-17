@@ -14,19 +14,18 @@ class App extends Component {
     fetch(url)
       .then(result => result.json())
       .then(result => this.setState({
-          'data': result,
+          'data': Object.entries(result),
         })
       )
   }
   render() {
     const { data } = this.state
-    const results = Object.entries(data)
-    const list = results.map((entry, index) => {
-      return <li key={index}>{entry[0]}----{entry[1]}</li>
+    const list = data.map((entry, index) => {
+      return <li key={index}>{entry[0]} ---- {entry[1]}</li>
     })
 
     return(
-      <div> Immersive Labs Frontend Techical Test
+      <div> Immersive Labs Frontend Technical Test
       <div className="card">
         <ul>{list}</ul>
       </div>
