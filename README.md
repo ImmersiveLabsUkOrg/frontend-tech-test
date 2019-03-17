@@ -1,41 +1,47 @@
-# Immersive Labs frontend technical test
+# Immersive Labs Front End Technical Test
 
-This is the starter project for the Immersive Labs frontend technical test.
+## Description
 
-## Objective
-Use the GitHub API to retrieve the public information about a user and display card based on the returned data. You can use your own username if you have one, or our Lead Frontend Developer's username `planetflash`.
+To create a small react application that fetches public information about a user from the GitHub API.
 
-## Tech
-This project comes with Crate React App, but you are free to use any boilerplate you wish or to start from scratch.
+[Original Instructions]()
 
-At Immersive Labs we use the following tech stack:
-- [React.js](https://facebook.github.io/react/)
-- [Redux](http://redux.js.org/)
-- [Redux Saga](https://redux-saga.js.org/)
-- [React Boilerplate](https://github.com/react-boilerplate/react-boilerplate)
-- [Styled Components](https://github.com/styled-components/styled-components)
-- [Jest](https://facebook.github.io/jest/)
-- [ImmutableJS](https://facebook.github.io/immutable-js/)
-You are welcome to use any of these you wish, or completely different technologies, but be prepared to discuss your decision
+## Getting Started
 
-The `src/theme.js` file contains some useful variables and colours you may wish to use.
+```
+- clone or download this repo
+- run npm install in console
+- run npm start in console
+- visit localhost:3000 (as default, please check your settings.)
+```
 
-## Time limit
-Please try and limit yourself to two hours on this test. We want to see what you can do in a short period of time and what you are comfortable with. We are not looking to see how many hours you are willing to put in.
+## Technology used
+```
+- JS React
+- Jest testing framework
+- Enzyme - testing framework for front-end testing
+```
+## Approach
 
-If you run out of time but there are other things you would have liked to implement, make a note of these to discuss with us, or let us know via the `readme.md` of your project.
+Before approaching the problem I took the time to go through the Immersive labs tech stack. Admittedly the list included a lot of unknowns but my research told me I would likely not need all of them as they seemed too involved for the simple task given unto me. I also decided to use the testing framework enzyme as I am comfortable with it and find it makes testing any outputs to the page easy.
 
-## Submission
-You can zip up your files and email them to [paul.thomas@immersivelabs.co.uk](mailto:paul.thomas@immersivelabs.co.uk) or submit via GitHub using a forked version of the repository and creating a pull request.
+I wanted to Test drive this functionality as I it is a process I am fond of and I do believe in its benefits. However my attempts to deploy this approach were mixed. I understood going in that I would need a lifecycle and fetch method, therefore I did not need to test that these functions worked as they have been already by people far more skilled than I.
 
-## Getting started
-Assuming you are using the project starter files as they come (using Create React App):
-- run `npm install` then
-- `npm start`
-- Head to [http://localhost:3000/](http://localhost:3000/)
-If you're using a different boilerplate or your own setup - you're on your own!
+ This process was halted somewhat by my own lack of understanding and so I had difficulty deriving a truly good first test. This difficulty swallowed around half an hour of the 2 hour time limit. Recognising the need for progression I decided to begin spiking into the functionality I desired. After a solid 20 minutes of spiking and playing around with the github response (this was my first time using the github API and I felt the need to research and get to grips with what information is public before testing.) With 50 minutes taken I decided to work with a simple test sitting somewhere between a unit and feature test. Once implemented I began building the functions. I identified that the in built react lifecycle methods are perfect for my need and implemented the functionality using a  componentDidMount and setState to ensure the page re-rendered once the response was dealt with.
 
-## Docs
-- [Create React App](https://github.com/facebook/create-react-app)
-- [GitHub API Getting Started](https://developer.github.com/v3/guides/getting-started/)
-- [GitHub API User docs](https://developer.github.com/v3/users/)
+Along this journey I ran into a new problem, the data returned was not in the expected format. Expecting to be able to iterate over the parsed response, I found I could not, and spent a good 20-25 minutes debugging this issue. Managing to overcome the ability to map the data I was then able to complete my function and get all public information displaying as a list on the page.
+
+Spending the last 20 minutes or so going over the code to ensure it was tidy, and then refactoring. After a couple of failed refactor attempts I managed to refactor some logic out of the render method.
+
+As always, my approach was also one of function over form. With any styling left until last. Sadly I ran out of time for this test to implement anything more than the basic HTML.
+
+
+
+## What I would do with more time
+
+With more time available to me, or if I was to continue work on this. I would implement the following:
+
+- Further testing, even after the fact, mocking the API call and response and testing that the associated functions operate as expected.
+- More refactoring - looking at the render function there is the .map method that would be extracted out to another function or component.
+- Styling - I would take the time to learn how to use CSS and its relatives to get to grips with full styling.
+- Linting - I would install ESLint and make sure my code is linted thoroughly

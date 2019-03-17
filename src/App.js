@@ -18,6 +18,7 @@ class App extends Component {
         })
       )
   }
+  
   render() {
     const { data } = this.state
     const list = data.map((entry, index) => {
